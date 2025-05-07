@@ -1,3 +1,11 @@
+const express = require('express');
+const cors = require('cors');
+const fetch = require('node-fetch');
+
+const app = express(); // <- THIS LINE IS CRITICAL
+
+app.use(cors());
+app.use(express.json());
 app.post('/proxy', async (req, res) => {
   const { url, method, token, body } = req.body;
 
